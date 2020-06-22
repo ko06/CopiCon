@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/CopiCon/static/css/main.25fcba2c.chunk.css",
+    "main.js": "/CopiCon/static/js/main.61e2149b.chunk.js",
+    "main.js.map": "/CopiCon/static/js/main.61e2149b.chunk.js.map",
+    "runtime-main.js": "/CopiCon/static/js/runtime-main.afa470d3.js",
+    "runtime-main.js.map": "/CopiCon/static/js/runtime-main.afa470d3.js.map",
+    "static/css/2.9ff99f11.chunk.css": "/CopiCon/static/css/2.9ff99f11.chunk.css",
+    "static/js/2.1e86685b.chunk.js": "/CopiCon/static/js/2.1e86685b.chunk.js",
+    "static/js/2.1e86685b.chunk.js.map": "/CopiCon/static/js/2.1e86685b.chunk.js.map",
+    "index.html": "/CopiCon/index.html",
+    "precache-manifest.d09e4a1d6461cf58656394c376ba90e3.js": "/CopiCon/precache-manifest.d09e4a1d6461cf58656394c376ba90e3.js",
+    "service-worker.js": "/CopiCon/service-worker.js",
+    "static/css/2.9ff99f11.chunk.css.map": "/CopiCon/static/css/2.9ff99f11.chunk.css.map",
+    "static/css/main.25fcba2c.chunk.css.map": "/CopiCon/static/css/main.25fcba2c.chunk.css.map",
+    "static/js/2.1e86685b.chunk.js.LICENSE.txt": "/CopiCon/static/js/2.1e86685b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.afa470d3.js",
+    "static/css/2.9ff99f11.chunk.css",
+    "static/js/2.1e86685b.chunk.js",
+    "static/css/main.25fcba2c.chunk.css",
+    "static/js/main.61e2149b.chunk.js"
+  ]
+}
