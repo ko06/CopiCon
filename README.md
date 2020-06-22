@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## OUTPUT
+
+you can check the view here https://ko06.github.io/CopiCon/
+
 ## Available Scripts
 
 In the project directory, you can run:
