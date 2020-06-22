@@ -239,7 +239,7 @@ class Home extends Component {
       iosApp: true,
       androidSplash: true,
       androidApp: true,
-      color: 'rgba(241,112,19,1)',
+      color: '#ff7714',
     }
   }
 
