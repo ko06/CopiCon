@@ -1,0 +1,131 @@
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    margin: 0 10%;
+}
+
+.header {
+    padding-bottom: 40px;
+    padding-top: 25px;
+  h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-weight: 400;
+    line-height: 1;
+    color: #777;
+    font-size: 15px;
+  }
+}
+
+h1,h2,h4 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.main-layout {
+  display: flex;
+  border-top: 1px solid #c8c8c8;
+  .editor-layout {
+    background-color: azure;
+    border-right: 1px solid #c8c8c8;
+    width: 60%;
+    padding: 10px 15px;
+  }
+  .preview-layout {
+    padding: 0 15px;
+    img {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.heading {
+  margin-bottom: 15px;
+  .number-circle {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 1em;
+    border: 2px solid rgb(117, 117, 117);
+    position: relative;
+    margin-bottom: 20px;
+    color: rgb(117, 117, 117);
+  }
+   h3 {
+    position: absolute;
+    font-size: 24px;
+    width: 200px;
+    left: 40px;
+    color: rgb(117, 117, 117);
+    font-weight: 200;
+  }
+   span {
+     position: absolute;
+     left: 0;
+     top: 20%;
+     height: 100%;
+     width: 100%;
+     text-align: center;
+   }
+}
+
+
+
+
+// btns
+
+.icon-bnt{
+  width: 135px;
+  height: 135px;
+  margin: 5px;
+  border-width: 2px;
+  .svg-inline--fa{
+    font-size: 64px;
+  }
+}
+
+.icon-size {
+  .btn {
+    width: 135px;
+    height: 55px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    border-radius: 0;
+    border-width: 2px;
+    display: inline-block;
+  }
+  span {
+    display: block;
+    color: rgb(163, 163, 163);
+  }
+}
+
+button:disabled,button[disabled] {
+  color: rgb(163, 163, 163) !important;
+  border-color: rgb(163, 163, 163) !important;
+  cursor: not-allowed;
+}
+
+[enable = 'false'] {
+  color: rgb(163, 163, 163) !important;
+  border-color: rgb(163, 163, 163) !important;
+}
+
+[enable = 'true'] {
+  color: #007bff !important;
+  border-color: #007bff !important;
+}
+
+.btn-outline-primary.focus, .btn-outline-primary:focus {
+  box-shadow: none;
+}
