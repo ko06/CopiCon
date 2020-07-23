@@ -7,7 +7,7 @@ class Preview extends Component {
   updatePreview = () => {
     const {appName} = this.props;
 
-    let fontName = "Helvetica";
+    let fontName = this.props.fontName ? this.props.fontName : "Helvetica";
     let fontWeight = "normal";
     let backgroundColor = this.props.color;
     let foregroundColor = "#fff";

@@ -240,6 +240,8 @@ class Home extends Component {
       androidSplash: true,
       androidApp: true,
       color: '#ff7714',
+      fontName: 'Helvetica',
+      stylePath: 'https://fonts.googleapis.com/css2?family=',
     }
   }
 
@@ -312,7 +314,7 @@ class Home extends Component {
   }
 
   downloadBtnClicked =()=> {
-    download(availableSizes, this.state.color, this.state.appName)
+    download(availableSizes, this.state.color, this.state.appName, this.state.fontName);
   }
 
   handleChangeComplete= (color) => {
@@ -326,26 +328,53 @@ class Home extends Component {
       appName: e.target.value,
     })
   }
+  appFontNameChange = value => {
+    this.setState({ fontName: value });
+  }
 
   render() {
-    const {toggleAndroid, toggleIos, appName, iosSplash,iosApp, androidApp,androidSplash,color} = this.state;
+    const {
+      toggleAndroid,
+      toggleIos,
+      appName,
+      iosSplash,
+      iosApp,
+      androidApp,
+      androidSplash,
+      color,
+      fontName,
+        stylePath,
+    } = this.state;
     return (
       <Container>
+        <link rel="stylesheet" type="text/css" href={stylePath+fontName} />
         <div className="header">
           <h2>CopiCon</h2>
           <h4>Sample Appicon &amp; Splash for mobile</h4>
         </div>
         <Row className={'main-layout'}>
           <Col sm={8} className={'editor-layout'}>
-            <AppInfo handleChangeComplete={this.handleChangeComplete} appNameChange={this.appNameChange} appleButtonClicked={this.appleButtonClicked} androidButtonClicked={this.androidButtonClicked} />
+            <AppInfo handleChangeComplete={this.handleChangeComplete} appNameChange={this.appNameChange} appleButtonClicked={this.appleButtonClicked} androidButtonClicked={this.androidButtonClicked} appFontNameChange={this.appFontNameChange}/>
             <IosStyle availableSizes={availableSizes} enableSingleIosBtn ={this.enableSingleIosBtn} iosApp={iosApp} iosSplash={iosSplash} toggleIos={toggleIos} enableAllIcon={this.enableAllIcon}/>
             <AndroidStyle availableSizes={availableSizes} androidApp={androidApp} androidSplash={androidSplash} enableAllIcon={this.enableAllIcon} toggleAndroid={toggleAndroid}/>
             <Button onClick={this.downloadBtnClicked}> download</Button>
           </Col>
-          <Col sm={4}><Preview  color={color} appName={appName}/> </Col>
+          <Col sm={4}><Preview  color={color} appName={appName} fontName={fontName}/> </Col>
         </Row>
       </Container>
     )
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    debugger;
+    if(prevState.fontName !== this.state.fontName) {
+      let head = document.head;
+      let link = document.createElement("link");
+      link.type = "text/css";
+      link.rel = "stylesheet";
+      link.href = this.state.stylePath + this.state.fontName + ':wght@500&display=swap';
+      head.appendChild(link);
+    }
   }
 }
 

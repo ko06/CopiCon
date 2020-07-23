@@ -77,7 +77,7 @@ let downloadButtonClicked = function (availableSizes) {
         },
         images: image[0]
       });
-
+      debugger;
       convertImgToBase64URL(image[0].src, key, function(base64Img, key) {
         convertedImages.push({
           key: key,
@@ -92,13 +92,16 @@ let downloadButtonClicked = function (availableSizes) {
   }
 }
 
-export function download( availableSizes, color, name) {
+export function download( availableSizes, color, name, font_name) {
   debugger
   if(color) {
     backgroundColor = color;
   }
   if(appName) {
     appName = name;
+  }
+  if(fontName) {
+    fontName = font_name;
   }
   downloadButtonClicked( availableSizes)
 }

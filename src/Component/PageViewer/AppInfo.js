@@ -3,13 +3,15 @@ import Form from 'react-bootstrap/Form';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Button from "react-bootstrap/Button";
 import {SketchPicker} from 'react-color';
-import reactCSS from 'reactcss'
+import reactCSS from 'reactcss';
+import axios from 'axios';
 
 
 
 class AppInfo extends Component {
   state = {
     displayColorPicker: false,
+    fontFamily: [],
     color: {
       r: '241',
       g: '112',
@@ -30,6 +32,19 @@ class AppInfo extends Component {
     this.setState({color: color.rgb})
     this.props.handleChangeComplete(color)
   };
+
+  handleChangeFont = event => {
+    debugger;
+    this.props.appFontNameChange(this.inputEl.value);
+  }
+  componentDidMount() {
+    axios.get('https://www.googleapis.com/webfonts/v1/webfonts?sort=TRENDING&key=AIzaSyC8O1ufZSOGZuRTmlxhDEMrUXQNPRuTDT4')
+        .then(response => {
+          console.log(response.data.items);
+          this.setState({fontFamily: response.data.items.map(font => font.family)});
+        })
+        .catch(error => console.log(error));
+  }
 
   render() {
     const styles = reactCSS({
@@ -59,7 +74,15 @@ class AppInfo extends Component {
         },
       },
     });
-    const {androidButtonClicked, appleButtonClicked, appNameChange} = this.props;
+    const {androidButtonClicked, appleButtonClicked, appNameChange, appFontNameChange} = this.props, { fontFamily } = this.state;
+    debugger;
+    let options;
+    if (fontFamily.length) {
+      options = fontFamily.map((font,index) => {
+        console.log(font);
+        return <option value={font} key={index}>{font}</option>
+      })
+    }
     return (
       <div>
         <div className="heading">
@@ -74,8 +97,26 @@ class AppInfo extends Component {
 
         <div className="heading">
           <div className="number-circle">
+            <h3>Choose Font</h3>
+            <span>2</span>
+          </div>
+          <div>
+            <Form.Group>
+              <Form.Control
+                  as="select"
+                  placeholder={"Select Font"}
+                  onChange={event=>appFontNameChange(event.target.value)}
+              >
+                {options}
+              </Form.Control>
+            </Form.Group>
+          </div>
+        </div>
+
+        <div className="heading">
+          <div className="number-circle">
             <h3>Choose color</h3>
-            <span> 3</span>
+            <span>3</span>
           </div>
           <div>
             <div style={styles.swatch} onClick={this.handleClick}>
@@ -92,7 +133,7 @@ class AppInfo extends Component {
         <div className="heading">
           <div className="number-circle">
             <h3>Choose Platform</h3>
-            <span>2</span>
+            <span>4</span>
           </div>
         </div>
 
