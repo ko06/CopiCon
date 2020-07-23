@@ -60,7 +60,7 @@ let downloadButtonClicked = function (availableSizes) {
     if (sizes.selected === true) {
       selectedCount++;
 
-      let dataSource = "holder.js/" + sizes.height + "x" + sizes.width + "?theme=simple&outline=yes&text=" + (appName.length > 0 ? appName : "App name");
+      let dataSource = "holder.js/" + sizes.height + "x" + sizes.width + "?theme=simple&outline=yes&text=" + (appName.length > 0 ? appName : "App name") + "&font=" + (fontName ? fontName : "Helvetica");
       let image = $("<img>").attr({
         "data-src": dataSource
       })
